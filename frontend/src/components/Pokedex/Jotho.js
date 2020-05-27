@@ -8,7 +8,7 @@ function Jotho() {
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
   const [loading, setLoading] = useState(true);
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon/?offset=151&limit=100'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon/?offset=151'
 
   useEffect(() => {
     async function fetchData() {
