@@ -10,13 +10,24 @@
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+.img{
+  width: 169px;
+}
+.marg{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .centere{
   justify-content: center;
   align-items: center;
 }
-.bor{
-  border: 1px solid black;
+
+.center_img{
+  text-align: center;
 }
+
 .jumbo{
   background: url("../assets/background.jpg") no-repeat fixed center; 
   background-size: cover;
@@ -25,6 +36,7 @@
   position: relative;
   z-index: -2;
 }
+
 .overlay {
   background-color: #000;
   opacity: 0.6;
@@ -34,4 +46,15 @@
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+hr {
+  width: 100%;
+}
+
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #333, #333, #ccc);
 }

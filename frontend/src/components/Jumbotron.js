@@ -11,8 +11,8 @@ export default class Jumbotron extends Component {
                         <Jumbo fluid className="jumbo col-12">
                             <div className="overlay"></div>
                             <Container style={{textAlign: 'center'}}>
-                                <h1>Welcome</h1>
-                                <p>Learn to code from my YouTube videos</p>
+                                <h1>Witamy</h1>
+                                <p>Centrum danych Pokemon Go</p>
                             </Container>
                         </Jumbo>
                     )}
@@ -22,8 +22,8 @@ export default class Jumbotron extends Component {
                         <Jumbo fluid className="jumbo">
                             <div className="overlay"></div>
                             <Container>
-                                <h1>Welcome</h1>
-                                <p>Learn to code from my YouTube videos</p>
+                                <h1>Witamy</h1>
+                                <p>Centrum danych Pokemon Go</p>
                             </Container>
                         </Jumbo>
                     )}
