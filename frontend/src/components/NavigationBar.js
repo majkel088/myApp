@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown, Dropdown, Button, ButtonGroup } from 'react-bootstrap';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
 
 export default class NavigationBar extends Component {
     state = {
@@ -39,7 +40,7 @@ export default class NavigationBar extends Component {
                             <Button variant="success" href="/">{this.state.msg}</Button>
                             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Wyloguj się</Dropdown.Item>
+                                <Dropdown.Item href="/logout">Wyloguj się</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Nav>

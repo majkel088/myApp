@@ -34,8 +34,9 @@ app.get('/loggin', function (request, response) {
 	response.end();
 });
 
-app.get('/loggout', function (request, response) {
-	request.session.loggedin = false;
+app.get('/logout', function (request, response) {
+	request.logout();
+	request.session.destroy();
 	response.redirect('/');
 });
 
