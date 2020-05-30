@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown, Dropdown, Button, ButtonGroup } from 'react-bootstrap';
 import axios from 'axios';
-import Form from 'react-bootstrap/Form';
 
 export default class NavigationBar extends Component {
+    
     state = {
         msg: "",
     };
+    
 
     componentDidMount = () => {
         axios.get('/loggin').then(response => {
@@ -15,6 +16,12 @@ export default class NavigationBar extends Component {
             });
         });
     };
+
+    singOut = (e) => {
+        e.preventDefault();
+        axios.get('/logout');
+        return window.location.href = "http://localhost:3000/";
+    }
 
     render() {
         return (
@@ -40,7 +47,7 @@ export default class NavigationBar extends Component {
                             <Button variant="success" href="/">{this.state.msg}</Button>
                             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
                             <Dropdown.Menu>
-                                <Dropdown.Item href="/logout">Wyloguj się</Dropdown.Item>
+                                <Dropdown.Item href="/" onClick={this.singOut}>Wyloguj się</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Nav>

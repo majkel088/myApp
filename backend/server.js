@@ -21,6 +21,7 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
@@ -29,15 +30,19 @@ app.get('/loggin', function (request, response) {
 	if (request.session.loggedin) {
 		response.send(request.session.username);
 	} else {
-		response.send('Zaloguj się!');
+		response.send("Zaloguj się!");
 	}
 	response.end();
 });
 
 app.get('/logout', function (request, response) {
-	request.logout();
-	request.session.destroy();
-	response.redirect('/');
+	if (request.session.loggedin){
+		request.session.loggedin = false;
+		return response.redirect('http://localhost:3000/');
+	} else {
+		response.send("Musisz się najpierw zalogować!");
+	}
+	response.end();
 });
 
 app.post('/auth', function (request, response) {
@@ -86,5 +91,6 @@ app.post('/singup', function (request, response) {
 		}
 	});
 });
+
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
